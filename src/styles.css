@@ -129,3 +129,13 @@
     @apply font-sans;
     }
 }
+
+@keyframes drift1 {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(80px, 50px); }
+}
+
+@keyframes drift2 {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-50px, -40px); }
+}
