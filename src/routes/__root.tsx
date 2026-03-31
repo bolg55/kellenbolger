@@ -14,7 +14,10 @@ export const Route = createRootRoute({
           "Custom web apps, AI-powered tools, and accounting integrations — built fast, built to last.",
       },
     ],
-    links: [{ rel: "stylesheet", href: appCss }],
+    links: [
+      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+      { rel: "stylesheet", href: appCss },
+    ],
     scripts: [
       {
         children: `(function(){try{var t=localStorage.getItem("theme");if(t==="light")return;document.documentElement.classList.add("dark")}catch(e){}})()`,
