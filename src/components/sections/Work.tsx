@@ -23,7 +23,7 @@ export function Work() {
                   <img
                     src={cs.image}
                     alt={cs.title}
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-cover object-top"
                   />
                 </div>
 

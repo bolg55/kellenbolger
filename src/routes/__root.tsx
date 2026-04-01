@@ -13,6 +13,15 @@ export const Route = createRootRoute({
         content:
           "Custom web apps, AI-powered tools, and accounting integrations — built fast, built to last.",
       },
+      { property: "og:title", content: "Kellen Bolger — Software That Solves Real Problems" },
+      { property: "og:description", content: "Custom web apps, AI-powered tools, and accounting integrations — built fast, built to last." },
+      { property: "og:image", content: "https://kellenbolger.ca/images/og.png" },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://kellenbolger.ca" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Kellen Bolger — Software That Solves Real Problems" },
+      { name: "twitter:description", content: "Custom web apps, AI-powered tools, and accounting integrations — built fast, built to last." },
+      { name: "twitter:image", content: "https://kellenbolger.ca/images/og.png" },
     ],
     links: [
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },

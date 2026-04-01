@@ -17,7 +17,7 @@ export const caseStudies: CaseStudy[] = [
     description:
       "AI-powered invoice generation for trades businesses. Parses messy job data and syncs drafts to QuickBooks and Xero.",
     outcome: "Live product serving real customers",
-    image: "https://media.kellenbolger.ca/tidyar.png",
+    image: "/images/tidyar.png",
     url: "https://tidyar.io",
     visible: true,
   },
@@ -28,7 +28,7 @@ export const caseStudies: CaseStudy[] = [
     description:
       "Custom scheduling and client management platform for a boutique yoga retreat. Built end-to-end.",
     outcome: "Full platform delivered from scratch",
-    image: "/images/camp-yoga.svg",
+    image: "/images/camp-yoga.png",
     visible: true,
   },
   {
@@ -38,7 +38,7 @@ export const caseStudies: CaseStudy[] = [
     description:
       "Sports betting analytics SaaS, built from scratch and scaled to real revenue.",
     outcome: "Scaled to $100K ARR before archiving",
-    image: "https://media.kellenbolger.ca/action_backers.png",
+    image: "/images/action-backers.png",
     visible: true,
   },
 ]
