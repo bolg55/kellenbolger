@@ -39,8 +39,10 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="py-24">
-      <div className="mx-auto max-w-xl px-6">
+    <section id="contact" className="relative overflow-hidden py-24">
+      {/* Subtle gradient background to visually separate */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(234,88,12,0.06),transparent_60%)] dark:bg-[radial-gradient(ellipse_at_bottom_right,rgba(234,88,12,0.08),transparent_60%)]" />
+      <div className="relative mx-auto max-w-xl px-6">
         <ScrollReveal>
           <h2 className="font-heading text-3xl font-bold tracking-tight text-foreground">
             Let&apos;s work together

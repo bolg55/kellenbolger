@@ -3,13 +3,15 @@ import { useEffect, useRef } from "react"
 type Props = {
   className?: string
   dotCount?: number
-  color?: string
+  darkColor?: string
+  lightColor?: string
 }
 
 export function DotConstellation({
   className,
   dotCount = 70,
-  color = "251,191,36",
+  darkColor = "234,88,12",
+  lightColor = "180,60,10",
 }: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
@@ -45,6 +47,11 @@ export function DotConstellation({
       const H = canvas.height
       ctx.clearRect(0, 0, W, H)
 
+      const isDark = document.documentElement.classList.contains("dark")
+      const color = isDark ? darkColor : lightColor
+      const dotAlpha = isDark ? 0.6 : 0.3
+      const lineAlpha = isDark ? 0.15 : 0.08
+
       for (const d of dots) {
         d.x += d.vx
         d.y += d.vy
@@ -53,7 +60,7 @@ export function DotConstellation({
 
         ctx.beginPath()
         ctx.arc(d.x, d.y, 2, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(${color},0.5)`
+        ctx.fillStyle = `rgba(${color},${dotAlpha})`
         ctx.fill()
       }
 
@@ -64,7 +71,7 @@ export function DotConstellation({
             ctx.beginPath()
             ctx.moveTo(dots[i].x, dots[i].y)
             ctx.lineTo(dots[j].x, dots[j].y)
-            ctx.strokeStyle = `rgba(${color},${0.12 * (1 - dist / 120)})`
+            ctx.strokeStyle = `rgba(${color},${lineAlpha * (1 - dist / 120)})`
             ctx.lineWidth = 1
             ctx.stroke()
           }
@@ -82,7 +89,7 @@ export function DotConstellation({
       window.removeEventListener("resize", resize)
       cancelAnimationFrame(animationId)
     }
-  }, [dotCount, color])
+  }, [dotCount, darkColor, lightColor])
 
   return (
     <canvas

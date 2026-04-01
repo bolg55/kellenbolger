@@ -6,20 +6,27 @@ import { DotConstellation } from "@/components/DotConstellation"
 export function Hero() {
   return (
     <section className="relative flex min-h-svh items-center justify-center overflow-hidden">
-      {/* Gradient mesh background */}
-      <div className="absolute inset-0">
-        <div className="absolute -top-20 -left-16 h-[400px] w-[400px] animate-[drift1_14s_ease-in-out_infinite_alternate] rounded-full bg-[radial-gradient(circle,rgba(251,191,36,0.1),transparent_70%)]" />
-        <div className="absolute -right-8 -bottom-10 h-[300px] w-[300px] animate-[drift2_18s_ease-in-out_infinite_alternate] rounded-full bg-[radial-gradient(circle,rgba(251,146,36,0.06),transparent_70%)]" />
+      {/* Gradient mesh background — dark mode */}
+      <div className="absolute inset-0 hidden dark:block">
+        <div className="absolute -top-20 -left-16 h-[500px] w-[500px] animate-[drift1_14s_ease-in-out_infinite_alternate] rounded-full bg-[radial-gradient(circle,rgba(234,88,12,0.15),transparent_70%)]" />
+        <div className="absolute -right-8 -bottom-10 h-[400px] w-[400px] animate-[drift2_18s_ease-in-out_infinite_alternate] rounded-full bg-[radial-gradient(circle,rgba(234,88,12,0.08),transparent_70%)]" />
+        <div className="absolute top-1/3 left-1/2 h-[300px] w-[300px] animate-[drift1_20s_ease-in-out_infinite_alternate-reverse] rounded-full bg-[radial-gradient(circle,rgba(234,88,12,0.06),transparent_70%)]" />
+      </div>
+      {/* Gradient mesh background — light mode (stronger opacity) */}
+      <div className="absolute inset-0 dark:hidden">
+        <div className="absolute -top-20 -left-16 h-[500px] w-[500px] animate-[drift1_14s_ease-in-out_infinite_alternate] rounded-full bg-[radial-gradient(circle,rgba(234,88,12,0.12),transparent_70%)]" />
+        <div className="absolute -right-8 -bottom-10 h-[400px] w-[400px] animate-[drift2_18s_ease-in-out_infinite_alternate] rounded-full bg-[radial-gradient(circle,rgba(234,88,12,0.07),transparent_70%)]" />
+        <div className="absolute top-1/3 left-1/2 h-[300px] w-[300px] animate-[drift1_20s_ease-in-out_infinite_alternate-reverse] rounded-full bg-[radial-gradient(circle,rgba(234,88,12,0.05),transparent_70%)]" />
       </div>
 
       {/* Dot constellation */}
-      <div className="absolute inset-0 opacity-30">
+      <div className="absolute inset-0">
         <DotConstellation />
       </div>
 
       {/* Center fade for readability — different for light/dark */}
-      <div className="absolute inset-0 hidden bg-[radial-gradient(ellipse_at_center,rgba(9,9,11,0.5)_0%,rgba(9,9,11,0.1)_70%)] dark:block" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.7)_0%,rgba(255,255,255,0.2)_70%)] dark:hidden" />
+      <div className="absolute inset-0 hidden bg-[radial-gradient(ellipse_at_center,rgba(9,9,11,0.4)_0%,transparent_60%)] dark:block" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.5)_0%,transparent_50%)] dark:hidden" />
 
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
