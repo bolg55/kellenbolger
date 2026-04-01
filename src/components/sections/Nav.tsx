@@ -1,6 +1,14 @@
 import { Link } from "@tanstack/react-router"
 import { useEffect, useState } from "react"
+import { Menu } from "lucide-react"
 import { ThemeToggle } from "@/components/ThemeToggle"
+import { Button } from "@/components/ui/button"
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetClose,
+} from "@/components/ui/sheet"
 import { cn } from "@/lib/utils"
 
 const navLinks = [
@@ -11,6 +19,7 @@ const navLinks = [
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false)
+  const [open, setOpen] = useState(false)
 
   useEffect(() => {
     function onScroll() {
@@ -35,7 +44,8 @@ export function Nav() {
           kellenbolger
         </Link>
 
-        <div className="flex items-center gap-6">
+        {/* Desktop nav */}
+        <div className="hidden items-center gap-6 sm:flex">
           {navLinks.map((link) => (
             <Link
               key={link.hash}
@@ -48,6 +58,37 @@ export function Nav() {
             </Link>
           ))}
           <ThemeToggle />
+        </div>
+
+        {/* Mobile nav */}
+        <div className="flex items-center gap-2 sm:hidden">
+          <ThemeToggle />
+          <Sheet open={open} onOpenChange={setOpen}>
+            <SheetTrigger
+              render={
+                <Button variant="ghost" size="icon" aria-label="Open menu" />
+              }
+            >
+              <Menu className="size-5" />
+            </SheetTrigger>
+            <SheetContent side="right" className="w-64">
+              <div className="mt-8 flex flex-col gap-6 px-4">
+                {navLinks.map((link) => (
+                  <SheetClose key={link.hash} render={<span />}>
+                    <Link
+                      to="/"
+                      hash={link.hash}
+                      hashScrollIntoView={{ behavior: "smooth" }}
+                      className="font-heading text-lg font-semibold text-foreground transition-colors hover:text-primary"
+                      onClick={() => setOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  </SheetClose>
+                ))}
+              </div>
+            </SheetContent>
+          </Sheet>
         </div>
       </nav>
     </header>

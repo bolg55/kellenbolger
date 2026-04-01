@@ -1,6 +1,6 @@
 import { ScrollReveal } from "@/components/ScrollReveal"
 
-const PHOTO_PATH: string | null = null
+const PHOTO_PATH: string | null = "/images/kellen.jpg"
 
 export function About() {
   return (
@@ -18,7 +18,7 @@ export function About() {
               <img
                 src={PHOTO_PATH}
                 alt="Kellen Bolger"
-                className="size-32 rounded-xl object-cover"
+                className="size-32 rounded-xl border border-border object-cover"
               />
             )}
             <div className="space-y-4 text-muted-foreground">
