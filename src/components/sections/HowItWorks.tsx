@@ -34,7 +34,7 @@ export function HowItWorks() {
           {steps.map((step, i) => (
             <ScrollReveal key={step.number} delay={i * 0.15}>
               <div className="relative">
-                <span className="font-heading text-4xl font-bold text-primary/20">
+                <span className="font-heading text-4xl font-bold text-primary/30 dark:text-primary/50">
                   {step.number}
                 </span>
                 <h3 className="mt-2 font-heading text-lg font-semibold text-foreground">

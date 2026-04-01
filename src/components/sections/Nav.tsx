@@ -24,7 +24,7 @@ export function Nav() {
     <header
       className={cn(
         "fixed top-0 right-0 left-0 z-50 transition-colors duration-300",
-        scrolled ? "bg-zinc-950/80 backdrop-blur-md" : "bg-transparent"
+        scrolled ? "bg-background/80 backdrop-blur-md" : "bg-transparent"
       )}
     >
       <nav className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">

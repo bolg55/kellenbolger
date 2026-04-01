@@ -17,8 +17,9 @@ export function Hero() {
         <DotConstellation />
       </div>
 
-      {/* Center fade for readability */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(9,9,11,0.5)_0%,rgba(9,9,11,0.1)_70%)]" />
+      {/* Center fade for readability — different for light/dark */}
+      <div className="absolute inset-0 hidden bg-[radial-gradient(ellipse_at_center,rgba(9,9,11,0.5)_0%,rgba(9,9,11,0.1)_70%)] dark:block" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.7)_0%,rgba(255,255,255,0.2)_70%)] dark:hidden" />
 
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">

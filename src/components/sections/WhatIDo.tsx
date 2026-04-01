@@ -40,7 +40,7 @@ export function WhatIDo() {
         <div className="mt-12 grid gap-6 sm:grid-cols-2">
           {services.map((service, i) => (
             <ScrollReveal key={service.title} delay={i * 0.1}>
-              <TiltCard>
+              <TiltCard className="h-full">
                 <service.icon className="size-6 text-primary" />
                 <h3 className="mt-3 font-heading text-lg font-semibold text-foreground">
                   {service.title}
