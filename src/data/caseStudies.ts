@@ -17,7 +17,7 @@ export const caseStudies: CaseStudy[] = [
     description:
       "AI-powered invoice generation for trades businesses. Parses messy job data and syncs drafts to QuickBooks and Xero.",
     outcome: "Live product serving real customers",
-    image: "/images/tidyar.svg",
+    image: "https://media.kellenbolger.ca/tidyar.png",
     url: "https://tidyar.io",
     visible: true,
   },
@@ -38,7 +38,7 @@ export const caseStudies: CaseStudy[] = [
     description:
       "Sports betting analytics SaaS, built from scratch and scaled to real revenue.",
     outcome: "Scaled to $100K ARR before archiving",
-    image: "/images/action-backers.svg",
+    image: "https://media.kellenbolger.ca/action_backers.png",
     visible: true,
   },
 ]
