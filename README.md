@@ -1,21 +1,53 @@
-# TanStack Start + shadcn/ui
+# kellenbolger.ca
 
-This is a template for a new TanStack Start project with React, TypeScript, and shadcn/ui.
+Personal portfolio and services site built with TanStack Start, Tailwind v4, and Framer Motion. Deployed on Cloudflare Workers.
 
-## Adding components
-
-To add components to your app, run the following command:
+## Development
 
 ```bash
-npx shadcn@latest add button
+bun install
+bun run dev
 ```
 
-This will place the ui components in the `components` directory.
+Site runs at `http://localhost:3000`.
 
-## Using components
+## Deployment
 
-To use the components in your app, import them as follows:
+### Prerequisites
 
-```tsx
-import { Button } from "@/components/ui/button";
+- [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/) authenticated (`wrangler login`)
+- Resend API key for the contact form
+
+### Environment Variables
+
+Set the Resend API key as a Cloudflare Workers secret:
+
+```bash
+wrangler secret put RESEND_API_KEY
 ```
+
+### Deploy
+
+```bash
+bun run deploy
+```
+
+This runs `bun run build && wrangler deploy`. The worker config is in `wrangler.jsonc`.
+
+### Preview (local Cloudflare environment)
+
+```bash
+bun run preview
+```
+
+### Custom Domain
+
+Configure your domain in the Cloudflare dashboard under Workers & Pages > your worker > Settings > Domains & Routes.
+
+## Images
+
+Case study screenshots and the about photo are served from a Cloudflare R2 bucket at `media.kellenbolger.ca`. Image URLs are referenced directly in `src/data/caseStudies.ts` and `src/components/sections/About.tsx`.
+
+## Contact Form
+
+The contact form uses [Resend](https://resend.com) via a TanStack Start server function (`src/server/contact.ts`). Emails are sent from `contact@mail.kellenbolger.ca`.
