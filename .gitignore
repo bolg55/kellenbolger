@@ -15,3 +15,4 @@ __unconfig*
 .playwright-mcp
 todos.json
 kellenbolger-site-spec.md
+.dev.vars

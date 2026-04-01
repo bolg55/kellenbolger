@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router"
 import { motion } from "framer-motion"
+import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { DotConstellation } from "@/components/DotConstellation"
 
@@ -8,15 +9,15 @@ export function Hero() {
     <section className="relative flex min-h-svh items-center justify-center overflow-hidden">
       {/* Gradient mesh background — dark mode */}
       <div className="absolute inset-0 hidden dark:block">
-        <div className="absolute -top-20 -left-16 h-[500px] w-[500px] animate-[drift1_14s_ease-in-out_infinite_alternate] rounded-full bg-[radial-gradient(circle,rgba(234,88,12,0.15),transparent_70%)]" />
-        <div className="absolute -right-8 -bottom-10 h-[400px] w-[400px] animate-[drift2_18s_ease-in-out_infinite_alternate] rounded-full bg-[radial-gradient(circle,rgba(234,88,12,0.08),transparent_70%)]" />
-        <div className="absolute top-1/3 left-1/2 h-[300px] w-[300px] animate-[drift1_20s_ease-in-out_infinite_alternate-reverse] rounded-full bg-[radial-gradient(circle,rgba(234,88,12,0.06),transparent_70%)]" />
+        <div className="absolute -top-20 -left-16 h-125 w-125 animate-[drift1_14s_ease-in-out_infinite_alternate] rounded-full bg-[radial-gradient(circle,rgba(234,88,12,0.15),transparent_70%)]" />
+        <div className="absolute -right-8 -bottom-10 h-100 w-100 animate-[drift2_18s_ease-in-out_infinite_alternate] rounded-full bg-[radial-gradient(circle,rgba(234,88,12,0.08),transparent_70%)]" />
+        <div className="absolute top-1/3 left-1/2 h-75 w-75 animate-[drift1_20s_ease-in-out_infinite_alternate-reverse] rounded-full bg-[radial-gradient(circle,rgba(234,88,12,0.06),transparent_70%)]" />
       </div>
       {/* Gradient mesh background — light mode (stronger opacity) */}
       <div className="absolute inset-0 dark:hidden">
-        <div className="absolute -top-20 -left-16 h-[500px] w-[500px] animate-[drift1_14s_ease-in-out_infinite_alternate] rounded-full bg-[radial-gradient(circle,rgba(234,88,12,0.12),transparent_70%)]" />
-        <div className="absolute -right-8 -bottom-10 h-[400px] w-[400px] animate-[drift2_18s_ease-in-out_infinite_alternate] rounded-full bg-[radial-gradient(circle,rgba(234,88,12,0.07),transparent_70%)]" />
-        <div className="absolute top-1/3 left-1/2 h-[300px] w-[300px] animate-[drift1_20s_ease-in-out_infinite_alternate-reverse] rounded-full bg-[radial-gradient(circle,rgba(234,88,12,0.05),transparent_70%)]" />
+        <div className="absolute -top-20 -left-16 h-125 w-125 animate-[drift1_14s_ease-in-out_infinite_alternate] rounded-full bg-[radial-gradient(circle,rgba(234,88,12,0.12),transparent_70%)]" />
+        <div className="absolute -right-8 -bottom-10 h-100 w-100 animate-[drift2_18s_ease-in-out_infinite_alternate] rounded-full bg-[radial-gradient(circle,rgba(234,88,12,0.07),transparent_70%)]" />
+        <div className="absolute top-1/3 left-1/2 h-75 w-75 animate-[drift1_20s_ease-in-out_infinite_alternate-reverse] rounded-full bg-[radial-gradient(circle,rgba(234,88,12,0.05),transparent_70%)]" />
       </div>
 
       {/* Dot constellation */}
@@ -61,7 +62,7 @@ export function Hero() {
             hashScrollIntoView={{ behavior: "smooth" }}
           >
             <Button size="lg" className="text-base">
-              Work with me →
+              Work with me <ArrowRight className="ml-1 h-4 w-4" />
             </Button>
           </Link>
         </motion.div>

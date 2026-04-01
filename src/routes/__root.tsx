@@ -31,6 +31,11 @@ export const Route = createRootRoute({
       {
         children: `(function(){try{var t=localStorage.getItem("theme");if(t==="light")return;document.documentElement.classList.add("dark")}catch(e){}})()`,
       },
+      {
+        src: "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit",
+        async: true,
+        defer: true,
+      },
     ],
   }),
   shellComponent: RootDocument,
