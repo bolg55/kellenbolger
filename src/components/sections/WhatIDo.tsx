@@ -6,8 +6,7 @@ const services = [
   {
     icon: Code,
     title: "Custom Web Apps",
-    description:
-      "Bespoke tools built around how your business actually works.",
+    description: "Bespoke tools built around how your business actually works.",
   },
   {
     icon: Bot,

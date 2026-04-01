@@ -9,7 +9,7 @@ export function Hero() {
       {/* Gradient mesh background */}
       <div className="absolute inset-0">
         <div className="absolute -top-20 -left-16 h-[400px] w-[400px] animate-[drift1_14s_ease-in-out_infinite_alternate] rounded-full bg-[radial-gradient(circle,rgba(251,191,36,0.1),transparent_70%)]" />
-        <div className="absolute -bottom-10 -right-8 h-[300px] w-[300px] animate-[drift2_18s_ease-in-out_infinite_alternate] rounded-full bg-[radial-gradient(circle,rgba(251,146,36,0.06),transparent_70%)]" />
+        <div className="absolute -right-8 -bottom-10 h-[300px] w-[300px] animate-[drift2_18s_ease-in-out_infinite_alternate] rounded-full bg-[radial-gradient(circle,rgba(251,146,36,0.06),transparent_70%)]" />
       </div>
 
       {/* Dot constellation */}
@@ -37,8 +37,8 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
           className="mx-auto mt-6 max-w-xl text-lg text-muted-foreground"
         >
-          Custom web apps, AI-powered tools, and accounting integrations —
-          built fast, built to last.
+          Custom web apps, AI-powered tools, and accounting integrations — built
+          fast, built to last.
         </motion.p>
 
         <motion.div
@@ -48,14 +48,14 @@ export function Hero() {
           className="mt-8"
         >
           <Link
-              to="/"
-              hash="contact"
-              hashScrollIntoView={{ behavior: "smooth" }}
-            >
-              <Button size="lg" className="text-base">
-                Work with me →
-              </Button>
-            </Link>
+            to="/"
+            hash="contact"
+            hashScrollIntoView={{ behavior: "smooth" }}
+          >
+            <Button size="lg" className="text-base">
+              Work with me →
+            </Button>
+          </Link>
         </motion.div>
       </div>
     </section>

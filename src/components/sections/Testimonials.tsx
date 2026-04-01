@@ -19,7 +19,9 @@ export function Testimonials() {
           {visible.map((t, i) => (
             <ScrollReveal key={t.name} delay={i * 0.1}>
               <blockquote className="rounded-xl border border-border bg-card p-6">
-                <p className="text-lg text-foreground">&ldquo;{t.quote}&rdquo;</p>
+                <p className="text-lg text-foreground">
+                  &ldquo;{t.quote}&rdquo;
+                </p>
                 <footer className="mt-4 text-sm text-muted-foreground">
                   {t.name} — {t.company}
                 </footer>

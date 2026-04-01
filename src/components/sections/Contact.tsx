@@ -7,7 +7,9 @@ import { ScrollReveal } from "@/components/ScrollReveal"
 import { sendContactEmail } from "@/server/contact"
 
 export function Contact() {
-  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle")
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle")
   const [errorMessage, setErrorMessage] = useState("")
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -30,7 +32,9 @@ export function Contact() {
       form.reset()
     } catch {
       setStatus("error")
-      setErrorMessage("Something went wrong. Please try again or email me directly.")
+      setErrorMessage(
+        "Something went wrong. Please try again or email me directly."
+      )
     }
   }
 
@@ -58,12 +62,7 @@ export function Contact() {
             <form onSubmit={handleSubmit} className="mt-8 space-y-6">
               <div className="space-y-2">
                 <Label htmlFor="name">Name</Label>
-                <Input
-                  id="name"
-                  name="name"
-                  required
-                  placeholder="Your name"
-                />
+                <Input id="name" name="name" required placeholder="Your name" />
               </div>
 
               <div className="space-y-2">

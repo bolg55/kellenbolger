@@ -29,8 +29,9 @@ export function About() {
               </p>
               <p>
                 I&apos;m opinionated about simplicity and allergic to
-                overengineered tools that nobody actually uses. If it doesn&apos;t
-                solve a real problem, I&apos;m not interested in building it.
+                overengineered tools that nobody actually uses. If it
+                doesn&apos;t solve a real problem, I&apos;m not interested in
+                building it.
               </p>
             </div>
           </div>

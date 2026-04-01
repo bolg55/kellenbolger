@@ -10,8 +10,7 @@ const steps = [
   {
     number: "02",
     title: "I'll scope a solution",
-    description:
-      "Clear deliverables, a clear plan, and no surprises.",
+    description: "Clear deliverables, a clear plan, and no surprises.",
   },
   {
     number: "03",

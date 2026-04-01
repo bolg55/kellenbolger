@@ -37,7 +37,7 @@ export function TiltCard({ children, className }: Props) {
       style={{ perspective: 800, transformStyle: "preserve-3d" }}
       className={cn(
         "rounded-xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-lg",
-        className,
+        className
       )}
     >
       {children}
