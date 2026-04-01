@@ -39,8 +39,10 @@ export const sendContactEmail = createServerFn({ method: "POST" })
     )
     const turnstileResult = (await turnstileResponse.json()) as {
       success: boolean
+      "error-codes"?: string[]
     }
     if (!turnstileResult.success) {
+      console.error("Turnstile verification failed:", turnstileResult)
       throw new Error("Verification failed. Please try again.")
     }
 
