@@ -20,7 +20,7 @@ export const sendContactEmail = createServerFn({ method: "POST" })
       const resend = new Resend(process.env.RESEND_API_KEY)
 
       await resend.emails.send({
-        from: "kellenbolger.ca <contact@kellenbolger.ca>",
+        from: "Kellen Bolger <contact@mail.kellenbolger.ca>",
         to: "kellen@kellenbolger.ca",
         subject: `New contact from ${data.name}`,
         replyTo: data.email,
