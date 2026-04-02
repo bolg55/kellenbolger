@@ -1,5 +1,6 @@
-import { type ReactNode, useRef, useState } from "react"
+import { useRef, useState } from "react"
 import { motion } from "framer-motion"
+import type { ReactNode } from "react"
 import { cn } from "@/lib/utils"
 
 type Props = {
@@ -36,7 +37,7 @@ export function TiltCard({ children, className }: Props) {
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
       style={{ perspective: 800, transformStyle: "preserve-3d" }}
       className={cn(
-        "rounded-xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-lg",
+        "rounded-xl border border-border bg-card p-6 shadow-sm transition-all duration-200 hover:border-primary/60 hover:shadow-lg",
         className
       )}
     >

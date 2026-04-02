@@ -1,7 +1,7 @@
 export type CaseStudy = {
   slug: string
   title: string
-  tags: string[]
+  tags: Array<string>
   description: string
   outcome: string
   image: string
@@ -9,13 +9,13 @@ export type CaseStudy = {
   visible: boolean
 }
 
-export const caseStudies: CaseStudy[] = [
+export const caseStudies: Array<CaseStudy> = [
   {
     slug: "tidyar",
     title: "tidyAR",
     tags: ["SaaS", "AI"],
     description:
-      "AI-powered invoice generation for trades businesses. Parses messy job data and syncs drafts to QuickBooks and Xero.",
+      "AI-powered accounts receivable tool for trades businesses. Parses messy job data and syncs invoice drafts directly to QuickBooks and Xero.",
     outcome: "Live product serving real customers",
     image: "/images/tidyar.png",
     url: "https://tidyar.io",
@@ -26,8 +26,8 @@ export const caseStudies: CaseStudy[] = [
     title: "Camp Yoga Scheduler",
     tags: ["Bespoke", "Web App"],
     description:
-      "Custom scheduling and client management platform for a boutique yoga retreat. Built end-to-end.",
-    outcome: "Full platform delivered from scratch",
+      "Full scheduling and client management platform for a boutique yoga retreat — replacing a $400/month MindBody subscription with something built exactly to fit.",
+    outcome: "Full platform delivered end-to-end",
     image: "/images/camp-yoga.png",
     visible: true,
   },
@@ -36,7 +36,7 @@ export const caseStudies: CaseStudy[] = [
     title: "Action Backers",
     tags: ["SaaS"],
     description:
-      "Sports betting analytics SaaS, built from scratch and scaled to real revenue.",
+      "Sports betting analytics and bet-tracking SaaS, built from scratch and scaled to real revenue — including automated bet grading via live score APIs.",
     outcome: "Scaled to $100K ARR before archiving",
     image: "/images/action-backers.png",
     visible: true,

@@ -1,4 +1,5 @@
 import { ExternalLink } from "lucide-react"
+import SectionLabel from "./SectionLabel"
 import { ScrollReveal } from "@/components/ScrollReveal"
 import { TiltCard } from "@/components/TiltCard"
 import { caseStudies } from "@/data/caseStudies"
@@ -10,8 +11,9 @@ export function Work() {
     <section id="work" className="py-24">
       <div className="mx-auto max-w-5xl px-6">
         <ScrollReveal>
+          <SectionLabel>Work</SectionLabel>
           <h2 className="font-heading text-3xl font-bold tracking-tight text-foreground">
-            Work
+            Things I've built.
           </h2>
         </ScrollReveal>
 

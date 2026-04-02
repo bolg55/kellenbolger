@@ -1,4 +1,6 @@
-import { type FormEvent, useCallback, useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useRef, useState } from "react"
+import SectionLabel from "./SectionLabel"
+import type { FormEvent } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -6,10 +8,9 @@ import { Label } from "@/components/ui/label"
 import { ScrollReveal } from "@/components/ScrollReveal"
 import { sendContactEmail } from "@/server/contact"
 
-const TURNSTILE_SITE_KEY =
-  import.meta.env.DEV
-    ? "1x00000000000000000000AA"
-    : "0x4AAAAAACyu9zZaWQqHaW_M"
+const TURNSTILE_SITE_KEY = import.meta.env.DEV
+  ? "1x00000000000000000000AA"
+  : "0x4AAAAAACyu9zZaWQqHaW_M"
 
 declare global {
   interface Window {
@@ -106,8 +107,9 @@ export function Contact() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(234,88,12,0.06),transparent_60%)] dark:bg-[radial-gradient(ellipse_at_bottom_right,rgba(234,88,12,0.08),transparent_60%)]" />
       <div className="relative mx-auto max-w-xl px-6">
         <ScrollReveal>
+          <SectionLabel>Contact</SectionLabel>
           <h2 className="font-heading text-3xl font-bold tracking-tight text-foreground">
-            Let&apos;s work together
+            Let&apos;s work together.
           </h2>
           <p className="mt-4 text-muted-foreground">
             Tell me what you&apos;re working on and I&apos;ll get back to you
@@ -125,8 +127,8 @@ export function Contact() {
           ) : (
             <form onSubmit={handleSubmit} className="mt-8 space-y-6">
               {/* Honeypot — hidden from real users, bots will fill it */}
-              <div className="absolute -left-[9999px]" aria-hidden="true">
-                <label htmlFor="company_url">Company URL</label>
+              <div className="absolute -left-2499.75" aria-hidden="true">
+                <Label htmlFor="company_url">Company URL</Label>
                 <input
                   type="text"
                   id="company_url"

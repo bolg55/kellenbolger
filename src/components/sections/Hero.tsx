@@ -46,8 +46,8 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
           className="mx-auto mt-6 max-w-xl text-lg text-muted-foreground"
         >
-          Custom web apps, AI-powered tools, and accounting integrations — built
-          fast, built to last.
+          For businesses that have outgrown their workarounds — custom web apps
+          and AI-powered tools, without the agency overhead or inflated scope.
         </motion.p>
 
         <motion.div

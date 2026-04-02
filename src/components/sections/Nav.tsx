@@ -1,13 +1,14 @@
 import { Link } from "@tanstack/react-router"
 import { useEffect, useState } from "react"
 import { Menu } from "lucide-react"
+import Logo from "../Logo"
 import { ThemeToggle } from "@/components/ThemeToggle"
 import { Button } from "@/components/ui/button"
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetTrigger,
-  SheetClose,
 } from "@/components/ui/sheet"
 import { cn } from "@/lib/utils"
 
@@ -37,11 +38,13 @@ export function Nav() {
       )}
     >
       <nav className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
-        <Link
-          to="/"
-          className="font-heading text-lg font-bold tracking-tight text-foreground"
-        >
-          kellenbolger
+        <Link to="/" className="flex items-center">
+          <div>
+            <Logo />
+          </div>
+          <div className="ml-2 font-heading text-lg font-bold tracking-tight text-foreground">
+            kellenbolger
+          </div>
         </Link>
 
         {/* Desktop nav */}

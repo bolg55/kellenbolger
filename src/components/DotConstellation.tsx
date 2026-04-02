@@ -23,7 +23,7 @@ export function DotConstellation({
     if (!ctx) return
 
     let animationId: number
-    let dots: { x: number; y: number; vx: number; vy: number }[] = []
+    let dots: Array<{ x: number; y: number; vx: number; vy: number }> = []
 
     function resize() {
       if (!canvas) return

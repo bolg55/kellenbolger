@@ -5,7 +5,7 @@ export type Testimonial = {
   visible: boolean
 }
 
-export const testimonials: Testimonial[] = [
+export const testimonials: Array<Testimonial> = [
   {
     name: "Placeholder",
     company: "Placeholder",
