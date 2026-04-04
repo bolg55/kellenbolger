@@ -38,7 +38,7 @@ export const caseStudies: Array<CaseStudy> = [
     description:
       "Sports betting analytics and bet-tracking SaaS, built from scratch and scaled to real revenue — including automated bet grading via live score APIs.",
     outcome: "Scaled to $100K ARR before archiving",
-    image: "/images/action-backers.png",
+    image: "/images/action-backers.webp",
     visible: true,
   },
 ]
