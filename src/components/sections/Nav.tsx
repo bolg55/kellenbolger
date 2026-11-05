@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import { Menu } from "lucide-react"
 import Logo from "../Logo"
 import { ThemeToggle } from "@/components/ThemeToggle"
-import { Button } from "@/components/ui/button"
+import { Button, buttonVariants } from "@/components/ui/button"
 import {
   Sheet,
   SheetClose,
@@ -13,9 +13,9 @@ import {
 import { cn } from "@/lib/utils"
 
 const navLinks = [
-  { label: "What I Do", hash: "what-i-do" },
+  { label: "Examples", hash: "examples" },
+  { label: "How it works", hash: "how-it-works" },
   { label: "Work", hash: "work" },
-  { label: "Contact", hash: "contact" },
 ] as const
 
 export function Nav() {
@@ -48,7 +48,7 @@ export function Nav() {
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden items-center gap-6 sm:flex">
+        <div className="hidden items-center gap-6 md:flex">
           {navLinks.map((link) => (
             <Link
               key={link.hash}
@@ -60,11 +60,19 @@ export function Nav() {
               {link.label}
             </Link>
           ))}
+          <Link
+            to="/"
+            hash="contact"
+            hashScrollIntoView={{ behavior: "smooth" }}
+            className={buttonVariants({ size: "lg" })}
+          >
+            Book a walkthrough
+          </Link>
           <ThemeToggle />
         </div>
 
         {/* Mobile nav */}
-        <div className="flex items-center gap-2 sm:hidden">
+        <div className="flex items-center gap-2 md:hidden">
           <ThemeToggle />
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger
@@ -89,6 +97,20 @@ export function Nav() {
                     </Link>
                   </SheetClose>
                 ))}
+                <SheetClose render={<span />}>
+                  <Link
+                    to="/"
+                    hash="contact"
+                    hashScrollIntoView={{ behavior: "smooth" }}
+                    className={cn(
+                      buttonVariants({ size: "lg" }),
+                      "h-11 w-full text-base"
+                    )}
+                    onClick={() => setOpen(false)}
+                  >
+                    Book a walkthrough
+                  </Link>
+                </SheetClose>
               </div>
             </SheetContent>
           </Sheet>

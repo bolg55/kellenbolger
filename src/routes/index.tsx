@@ -1,11 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router"
 import { Nav } from "@/components/sections/Nav"
 import { Hero } from "@/components/sections/Hero"
-import { WhatIDo } from "@/components/sections/WhatIDo"
-import { Work } from "@/components/sections/Work"
+import { Problem } from "@/components/sections/Problem"
+import { Examples } from "@/components/sections/Examples"
 import { HowItWorks } from "@/components/sections/HowItWorks"
-import { Testimonials } from "@/components/sections/Testimonials"
+import { Trust } from "@/components/sections/Trust"
+import { Work } from "@/components/sections/Work"
 import { About } from "@/components/sections/About"
+import { Testimonials } from "@/components/sections/Testimonials"
 import { Contact } from "@/components/sections/Contact"
 import { Footer } from "@/components/sections/Footer"
 
@@ -17,11 +19,13 @@ function Home() {
       <Nav />
       <main>
         <Hero />
-        <WhatIDo />
-        <Work />
+        <Problem />
+        <Examples />
         <HowItWorks />
-        <Testimonials />
+        <Trust />
+        <Work />
         <About />
+        <Testimonials />
         <Contact />
       </main>
       <Footer />

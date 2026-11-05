@@ -3,6 +3,7 @@ import { Resend } from "resend"
 
 interface ContactInput {
   name: string
+  business?: string
   email: string
   message: string
   honeypot: string
@@ -51,9 +52,9 @@ export const sendContactEmail = createServerFn({ method: "POST" })
     await resend.emails.send({
       from: "Kellen Bolger <contact@mail.kellenbolger.ca>",
       to: "kellen@kellenbolger.ca",
-      subject: `New contact from ${data.name}`,
+      subject: `Walkthrough request from ${data.name}`,
       replyTo: data.email,
-      text: `Name: ${data.name}\nEmail: ${data.email}\n\n${data.message}`,
+      text: `Name: ${data.name}\nBusiness: ${data.business || "(not given)"}\nEmail: ${data.email}\n\nThe task that eats their week:\n${data.message}`,
     })
 
     return { success: true }

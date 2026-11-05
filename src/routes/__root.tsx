@@ -7,40 +7,40 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Kellen Bolger — Software That Solves Real Problems" },
+      { title: "Kellen Bolger | AI & Automation, Kitchener-Waterloo" },
       {
         name: "description",
         content:
-          "Custom web apps, AI-powered tools, and accounting integrations — built fast, built to last.",
+          "Show me the task that eats your week and I'll turn it into a tool or AI assistant that does it for you. Kitchener-Waterloo, working across Canada.",
       },
       {
         property: "og:title",
-        content: "Kellen Bolger — Software That Solves Real Problems",
+        content: "Kellen Bolger | AI & Automation, Kitchener-Waterloo",
       },
       {
         property: "og:description",
         content:
-          "Custom web apps, AI-powered tools, and accounting integrations — built fast, built to last.",
+          "Show me the task that eats your week and I'll turn it into a tool or AI assistant that does it for you. Kitchener-Waterloo, working across Canada.",
       },
       {
         property: "og:image",
-        content: "https://kellenbolger.ca/images/og.png",
+        content: "https://kellenbolger.ca/images/og.png?v=2",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://kellenbolger.ca" },
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",
-        content: "Kellen Bolger — Software That Solves Real Problems",
+        content: "Kellen Bolger | AI & Automation, Kitchener-Waterloo",
       },
       {
         name: "twitter:description",
         content:
-          "Custom web apps, AI-powered tools, and accounting integrations — built fast, built to last.",
+          "Show me the task that eats your week and I'll turn it into a tool or AI assistant that does it for you. Kitchener-Waterloo, working across Canada.",
       },
       {
         name: "twitter:image",
-        content: "https://kellenbolger.ca/images/og.png",
+        content: "https://kellenbolger.ca/images/og.png?v=2",
       },
       {
         name: "apple-mobile-web-app-title",

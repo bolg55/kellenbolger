@@ -1,6 +1,6 @@
 # kellenbolger.ca
 
-Personal portfolio and services site built with TanStack Start, Tailwind v4, and Framer Motion. Deployed on Cloudflare Workers.
+Personal services site built with TanStack Start, Tailwind v4, and Framer Motion. Deployed on Cloudflare Workers.
 
 ## Development
 
@@ -46,7 +46,7 @@ Configure your domain in the Cloudflare dashboard under Workers & Pages > your w
 
 ## Images
 
-Case study screenshots and the about photo are served from a Cloudflare R2 bucket at `media.kellenbolger.ca`. Image URLs are referenced directly in `src/data/caseStudies.ts` and `src/components/sections/About.tsx`.
+Case study screenshots, the about photo and the social preview image (`og.png`) live in `public/images/`. Project data, including which projects appear on the homepage, is in `src/data/caseStudies.ts`. Prices, the booking link and footer links are in `src/data/site.ts`.
 
 ## Contact Form
 

@@ -1,8 +1,9 @@
 import { Link } from "@tanstack/react-router"
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
 import { DotConstellation } from "@/components/DotConstellation"
+import { cn } from "@/lib/utils"
 
 export function Hero() {
   return (
@@ -30,14 +31,28 @@ export function Hero() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.5)_0%,transparent_50%)] dark:hidden" />
 
       {/* Content */}
-      <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
-        <motion.h1
+      <div className="relative z-10 mx-auto max-w-3xl px-6 pt-16 text-center">
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
+          className="mb-4 text-xs font-medium tracking-widest text-primary uppercase"
+        >
+          Kellen Bolger · Kitchener-Waterloo
+        </motion.p>
+
+        {/*
+          Alternate headlines:
+          - "If you do it every week, I can probably make it go away."
+          - "The task that eats your week, turned into a button."
+        */}
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.05, ease: "easeOut" }}
           className="font-heading text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl"
         >
-          I build software that solves real problems for real businesses.
+          Show me once. Never do it by hand again.
         </motion.h1>
 
         <motion.p
@@ -46,26 +61,49 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
           className="mx-auto mt-6 max-w-xl text-lg text-muted-foreground"
         >
-          For businesses that have outgrown their workarounds — custom web apps
-          and AI-powered tools, without the agency overhead or inflated scope.
+          Walk me through the task that eats your week. I&apos;ll turn it into a
+          tool, or an AI assistant that knows how you do it, and keep it
+          running.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-          className="mt-8"
+          className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row"
         >
           <Link
             to="/"
             hash="contact"
             hashScrollIntoView={{ behavior: "smooth" }}
+            className={cn(
+              buttonVariants({ size: "lg" }),
+              "h-11 w-full px-5 text-base sm:w-auto"
+            )}
           >
-            <Button size="lg" className="text-base">
-              Work with me <ArrowRight className="ml-1 h-4 w-4" />
-            </Button>
+            Book a walkthrough <ArrowRight className="ml-1 h-4 w-4" />
+          </Link>
+          <Link
+            to="/"
+            hash="examples"
+            hashScrollIntoView={{ behavior: "smooth" }}
+            className={cn(
+              buttonVariants({ variant: "outline", size: "lg" }),
+              "h-11 w-full px-5 text-base sm:w-auto"
+            )}
+          >
+            See examples
           </Link>
         </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.45, ease: "easeOut" }}
+          className="mt-6 text-sm text-muted-foreground"
+        >
+          Working with businesses across Canada · In person or remote
+        </motion.p>
       </div>
     </section>
   )

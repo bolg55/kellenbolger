@@ -5,11 +5,5 @@ export type Testimonial = {
   visible: boolean
 }
 
-export const testimonials: Array<Testimonial> = [
-  {
-    name: "Placeholder",
-    company: "Placeholder",
-    quote: "Placeholder testimonial.",
-    visible: false,
-  },
-]
+// Add real client quotes only. Do not fabricate.
+export const testimonials: Array<Testimonial> = []

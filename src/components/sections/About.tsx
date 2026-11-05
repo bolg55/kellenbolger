@@ -1,4 +1,3 @@
-import AboutCallout from "./AboutCallout"
 import SectionLabel from "./SectionLabel"
 import { ScrollReveal } from "@/components/ScrollReveal"
 
@@ -6,12 +5,12 @@ const PHOTO_PATH: string | null = "/images/kellen.jpg"
 
 export function About() {
   return (
-    <section id="about" className="py-24">
+    <section id="about" className="scroll-mt-16 py-24">
       <div className="mx-auto max-w-3xl px-6">
         <ScrollReveal>
           <SectionLabel>About</SectionLabel>
           <h2 className="font-heading text-3xl font-bold tracking-tight text-foreground">
-            About.
+            Hi, I&apos;m Kellen.
           </h2>
         </ScrollReveal>
 
@@ -26,24 +25,22 @@ export function About() {
             )}
             <div className="space-y-4 text-muted-foreground">
               <p>
-                I lead with the problem, not the technology. I&apos;ve built
-                software that scaled to six-figure revenue, shipped tools that
-                replaced five-figure software subscriptions, and turned manual
-                processes that consumed hours into things that just happen
-                automatically.
+                I&apos;m a self-taught developer and a senior solutions engineer
+                by day. I&apos;ve also built and run my own software business,
+                up to $100K a year in revenue, so I know what your time is
+                worth.
+              </p>
+              {/* Don't add more detail about the internal tool. */}
+              <p>
+                By day, I build AI assistants that a whole team uses every day.
+                They connect to the team&apos;s tools and follow its procedures.
+                I set up the same kind of thing for small businesses.
               </p>
               <p>
-                I work best with business owners and operators who know their
-                problem inside out but don&apos;t want to manage a dev team or
-                navigate technical decisions alone. I&apos;ll tell you what to
-                build, why, and then build it.
+                I&apos;m based in Kitchener-Waterloo. I&apos;d rather build you
+                something small that you actually use than something clever that
+                you don&apos;t.
               </p>
-              <p>
-                I&apos;m based in Waterloo. Opinionated about simplicity,
-                allergic to overengineered tools that nobody actually uses. The
-                best software is the kind your team actually reaches for.
-              </p>
-              <AboutCallout />
             </div>
           </div>
         </ScrollReveal>

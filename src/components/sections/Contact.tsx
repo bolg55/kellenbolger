@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { ScrollReveal } from "@/components/ScrollReveal"
 import { sendContactEmail } from "@/server/contact"
+import { bookingUrl, pricing } from "@/data/site"
 
 const TURNSTILE_SITE_KEY = import.meta.env.DEV
   ? "1x00000000000000000000AA"
@@ -84,6 +85,7 @@ export function Contact() {
       await sendContactEmail({
         data: {
           name: formData.get("name") as string,
+          business: formData.get("business") as string,
           email: formData.get("email") as string,
           message: formData.get("message") as string,
           honeypot: formData.get("company_url") as string,
@@ -102,26 +104,44 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="relative overflow-hidden py-24">
+    <section
+      id="contact"
+      className="relative scroll-mt-16 overflow-hidden py-24"
+    >
       {/* Subtle gradient background to visually separate */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(234,88,12,0.06),transparent_60%)] dark:bg-[radial-gradient(ellipse_at_bottom_right,rgba(234,88,12,0.08),transparent_60%)]" />
       <div className="relative mx-auto max-w-xl px-6">
         <ScrollReveal>
-          <SectionLabel>Contact</SectionLabel>
+          <SectionLabel>Book a walkthrough</SectionLabel>
           <h2 className="font-heading text-3xl font-bold tracking-tight text-foreground">
-            Let&apos;s work together.
+            What would you never want to do by hand again?
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Tell me what you&apos;re working on and I&apos;ll get back to you
-            within a day or two.
+            {pricing.walkthrough
+              ? `One hour, ${pricing.walkthrough}, credited toward the build if you go ahead.`
+              : "One hour, fixed price, no obligation."}{" "}
+            Tell me a bit about it below and I&apos;ll get back to you within a
+            day or two to find a time.
           </p>
+          {bookingUrl && (
+            <p className="mt-2 text-sm">
+              <a
+                href={bookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-primary hover:underline"
+              >
+                Pick a time
+              </a>
+            </p>
+          )}
         </ScrollReveal>
 
         <ScrollReveal delay={0.1}>
           {status === "success" ? (
             <div className="mt-8 rounded-xl border border-primary/20 bg-primary/5 p-6 text-center">
               <p className="font-medium text-foreground">
-                Thanks! I&apos;ll be in touch soon.
+                Thanks. I&apos;ll be in touch within a day or two.
               </p>
             </div>
           ) : (
@@ -144,6 +164,16 @@ export function Contact() {
               </div>
 
               <div className="space-y-2">
+                <Label htmlFor="business">Business name</Label>
+                <Input
+                  id="business"
+                  name="business"
+                  autoComplete="organization"
+                  placeholder="Optional"
+                />
+              </div>
+
+              <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
                 <Input
                   id="email"
@@ -155,13 +185,15 @@ export function Contact() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="message">Message</Label>
+                <Label htmlFor="message">
+                  What&apos;s the task that eats your week?
+                </Label>
                 <Textarea
                   id="message"
                   name="message"
                   required
                   rows={5}
-                  placeholder="Tell me about your project..."
+                  placeholder="Every Friday I copy numbers from three spreadsheets into one report..."
                 />
               </div>
 
@@ -172,7 +204,7 @@ export function Contact() {
               )}
 
               <Button type="submit" disabled={status === "sending"} size="lg">
-                {status === "sending" ? "Sending..." : "Send message"}
+                {status === "sending" ? "Sending..." : "Book a walkthrough"}
               </Button>
             </form>
           )}
